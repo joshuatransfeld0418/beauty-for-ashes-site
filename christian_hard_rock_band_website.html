@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+  DEPLOYMENT NOTES:
+  1. Place this file as index.html
+  2. Create an /images folder
+  3. Rename images to match paths below
+  4. Upload entire folder to Netlify or GitHub Pages
+  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beauty For Ashes | Christian Hard Rock</title>
+  <meta name="description" content="Beauty For Ashes – Christian hard rock band blending faith, fire, and heavy music." />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Animations -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    body { font-family: 'Oswald', sans-serif; }
+    .band-font { font-family: 'Metal Mania', cursive; letter-spacing: 0.08em; }
+
+    /* Fire glow effects */
+    .fire-glow {
+      filter: drop-shadow(0 0 10px rgba(255,60,0,.8)) drop-shadow(0 0 25px rgba(255,0,0,.6));
+      animation: flicker 3s infinite;
+    }
+
+    @keyframes flicker {
+      0%, 100% { filter: drop-shadow(0 0 12px rgba(255,60,0,.9)) drop-shadow(0 0 30px rgba(255,0,0,.6)); }
+      50% { filter: drop-shadow(0 0 20px rgba(255,120,0,1)) drop-shadow(0 0 40px rgba(255,0,0,.8)); }
+    }
+
+    .glow-blue { text-shadow: 0 0 15px rgba(37,99,235,.8); }
+  
+    /* Ember particles */
+    .embers {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1;
+      background: radial-gradient(circle at bottom, rgba(255,60,0,0.15), transparent 60%);
+      overflow: hidden;
+    }
+
+    .ember {
+      position: absolute;
+      bottom: -10px;
+      width: 3px;
+      height: 3px;
+      background: rgba(255,120,0,.9);
+      border-radius: 50%;
+      animation: rise linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes rise {
+      from { transform: translateY(0) scale(1); opacity: 1; }
+      to { transform: translateY(-120vh) scale(0); opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-black text-gray-100 overflow-x-hidden">
+
+<div class="embers" id="embers"></div>
+
+<!-- HERO -->
+<section class="relative min-h-screen flex items-center justify-center text-center">
+  <img src="images/hero-bg.png" class="absolute inset-0 w-full h-full object-cover opacity-40" />
+  <div class="relative z-10 px-6" data-aos="fade-up">
+    <img src="images/logo.jpg" alt="Beauty For Ashes Logo" class="mx-auto max-w-xl fire-glow" />
+    <p class="mt-6 text-xl text-blue-400 glow-blue">Redemption Through Fire</p>
+    <p class="mt-4 italic text-gray-300">"To bestow on them a crown of beauty instead of ashes" – Isaiah 61:3</p>
+    <a href="#media" class="mt-10 inline-block px-10 py-3 border-2 border-red-600 text-red-600 hover:bg-red-600 hover:text-black transition">Enter</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="py-20 px-6 md:px-20 bg-gradient-to-b from-black to-gray-900">
+  <div class="grid md:grid-cols-2 gap-10 items-center">
+    <img src="images/band-photo.jpg" class="rounded-2xl shadow-xl" data-aos="fade-right" />
+    <div data-aos="fade-left">
+      <svg class="mb-6 fire-glow" width="320" height="70" viewBox="0 0 320 70" xmlns="http://www.w3.org/2000/svg">
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#dc2626" font-size="48" font-family="Metal Mania">Our Mission</text>
+</svg>
+      <p class="text-lg text-gray-300 leading-relaxed">
+        Beauty For Ashes is a Christian hard rock band proclaiming hope, healing, and salvation through heavy music.
+        Our songs are testimonies of transformation — darkness replaced with light through Jesus Christ.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- MEDIA GALLERY -->
+<section id="media" class="py-20 px-6 md:px-20 bg-black">
+  <div class="flex justify-center mb-12"><svg class="fire-glow" width="360" height="70" viewBox="0 0 360 70" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#dc2626" font-size="52" font-family="Metal Mania">Live & Loud</text></svg></div>
+  <div class="grid md:grid-cols-3 gap-8">
+    <img src="images/live-1.jpg" class="rounded-xl hover:scale-105 transition" data-aos="zoom-in" />
+    <img src="images/live-2.jpg" class="rounded-xl hover:scale-105 transition" data-aos="zoom-in" />
+    <img src="images/live-3.jpg" class="rounded-xl hover:scale-105 transition" data-aos="zoom-in" />
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section class="py-20 px-6 md:px-20 bg-gradient-to-b from-gray-900 to-black">
+  <svg class="fire-glow mb-10" width="260" height="70" viewBox="0 0 260 70" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#2563eb" font-size="52" font-family="Metal Mania">Music</text></svg>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-black border border-red-600 p-6 rounded-xl" data-aos="fade-up">
+      <h3 class="text-2xl">Beauty For Ashes</h3>
+      <p class="text-gray-400">Single</p>
+    </div>
+    <div class="bg-black border border-blue-600 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+      <h3 class="text-2xl">Unashamed</h3>
+      <p class="text-gray-400">Single</p>
+    </div>
+    <div class="bg-black border border-red-600 p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+      <h3 class="text-2xl">Refined By Fire</h3>
+      <p class="text-gray-400">EP – Coming Soon</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALL TO ACTION -->
+<section class="py-20 text-center bg-black">
+  <svg class="fire-glow mb-6" width="520" height="80" viewBox="0 0 520 80" xmlns="http://www.w3.org/2000/svg"><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#dc2626" font-size="60" font-family="Metal Mania">This Is Ministry</text></svg>
+  <p class="text-gray-300 max-w-2xl mx-auto">We don't just play shows — we share the Gospel. Join us.</p>
+</section>
+
+<!-- SOCIALS -->
+<section class="py-16 bg-black text-center">
+  <p class="mb-6 text-gray-400">Follow & Connect</p>
+  <div class="flex justify-center gap-8 text-red-500 text-xl">
+    <a href="#" class="hover:text-blue-500 transition">Instagram</a>
+    <a href="#" class="hover:text-blue-500 transition">Facebook</a>
+    <a href="#" class="hover:text-blue-500 transition">YouTube</a>
+    <a href="#" class="hover:text-blue-500 transition">Spotify</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-6 text-center bg-gray-900 text-gray-500">
+  © 2026 Beauty For Ashes • All Glory to God
+</footer>
+
+<script>
+  // Ember generator
+  const emberContainer = document.getElementById('embers');
+  for (let i = 0; i < 60; i++) {
+    const ember = document.createElement('div');
+    ember.className = 'ember';
+    ember.style.left = Math.random() * 100 + 'vw';
+    ember.style.animationDuration = 6 + Math.random() * 6 + 's';
+    ember.style.animationDelay = Math.random() * 5 + 's';
+    emberContainer.appendChild(ember);
+  }
+</script>
+
+<script>AOS.init({ once: true, duration: 1000 });</script>
+
+</body>
+</html>
